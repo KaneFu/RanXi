@@ -28,6 +28,7 @@ def GetFutureMinData(instrumentid):
        while timeDiff > datetime.timedelta(minutes=1) and timeDiff < datetime.timedelta(minutes=15):
            lastTime = lastTime - datetime.timedelta(minutes=1)
            print str(data['c']) + "," +  str(lastTime)
+
            fPdData.append(str(data['c']) + "," +  str(lastTime))
            timeDiff = lastTime - data['startTime']
        fPdData.append(str(data['c']) + "," +  str(data['startTime']))
